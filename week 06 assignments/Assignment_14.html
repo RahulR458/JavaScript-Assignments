@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 14</title>
+</head>
+<body>
+    <div>
+        <label> Enter the size of arrays</label>
+        <input type="number" id="num" placeholder="Enter the limit">
+        <button onclick="fn()">Enter</button>
+    </div>
+    <script>
+        function fn(){
+            let arr1 = [[]]
+            let arr2 = [[]]
+            let sumArr = [[]]
+            let size = parseInt(document.getElementById("num").value)
+            for(let i=0; i<size; i++){
+                arr1[i] = [];
+                for(let j=0; j<size; j++){
+                    arr1[i][j] =+ prompt(" Enter the values of array 1")
+                }
+            }
+            for(i=0; i<size; i++){
+                arr2[i] = [];
+                for(j=0; j<size; j++){
+                    arr2[i][j] =+ prompt("Enter the values of array 2")
+                }
+            }
+            
+            for(i=0; i<size; i++){
+                sumArr[i] = [];
+                for(j=0; j<size; j++){
+                    sumArr[i][j] = arr1[i][j]+arr2[i][j];
+                    document.write(sumArr[i][j]+" ")
+                }document.write("<br>")
+            }
+        }
+    </script>
+</body>
+</html>

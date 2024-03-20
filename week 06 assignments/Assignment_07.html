@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 07</title>
+</head>
+<body>
+    <div>
+        <label>Enter a Number</label><br>
+        <input type="number" id="num" placeholder="Enter">
+        <button onclick="fn()">click me</button>
+    </div>
+    <script>
+        function fn(){
+            let multi = parseInt(document.getElementById("num").value)
+            for(let i=1; i<=10; i++){
+                let m = i*multi
+                document.write(i+" "+ "x" +" "+ multi +" "+ "=" +" "+ m +"<br>" )
+            }
+        }
+    </script>
+</body>
+</html>

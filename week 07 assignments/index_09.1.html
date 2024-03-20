@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 09</title>
+</head>
+<body>
+    <script>
+        function printCrossroads(num) {
+            if (num < 8) {
+                document.write("Crossroads");
+                printCrossroads(num + 1);
+            }
+        }
+
+        const word = prompt("Enter the word: ");
+        if (word === "Crossroads") {
+
+            printCrossroads(0);
+        } else {
+            document.write("Invalid word entered.");
+        }
+
+    </script>
+</body>
+</html>

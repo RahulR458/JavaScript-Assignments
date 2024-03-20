@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 03</title>
+</head>
+<body>
+    <div>
+        <div>Select your choice</div>
+        <div>1. Circle</div>
+        <div>2. Square</div>
+        <div>3. Rectange</div>
+        <div>4. Triangle</div>
+        <input type="number" id="num" placeholder="Enter your choice">
+        <button onclick="main()">Submit</button>
+        <div id="result">Result is  :  </div>
+    </div>
+    <script>
+        function main(){
+          let choice =+ document.getElementById("num").value
+          let findArea = new myClass()
+          findArea.choice(choice);  
+        }
+
+      
+        class area{
+            Circle(radius){
+                let areaCircle = 3.14*radius*radius;
+                document.getElementById("result").innerHTML = "Area of circle : "+ areaCircle    
+            }
+            square(side){
+                let areaSquare = side * side;
+                document.getElementById("result").innerHTML = "Area of Squrae :"+ areaSquare;
+            }
+            rectangle(length,breadth){
+                let areaRectangle = length * breadth;
+                document.getElementById("result").innerHTML = "Area of Rectangle :"+ areaRectangle;
+            }
+            triangle(base, height){
+                let areaTrangle = (1/2)*base*height;
+                document.getElementById("result").innerHTML = "Area of Triangle :"+ areaTrangle;
+            }
+        }
+
+        class myClass extends area{
+            choice(choice){
+                switch(choice){
+                    case 1: this.Circle();
+                    break;
+                    case 2: this.square();
+                    break;
+                    case 3: this.rectangle();
+                    break;
+                    case 4: this.triangle();
+                    break;
+                    default: alert("Invalid Entry");
+                }
+            }
+            Circle(){
+                let radius =+ parseInt(prompt("Enter the radius of the circle"))
+                super.Circle(radius);
+            }
+            square(){
+                let side =+ parseInt(prompt("Enter the length of the square"))
+                super.square(side);
+            }
+            rectangle(){
+                let length =+ parseInt(prompt("Enter the length of the rectangle"))
+                let breadth =+ parseInt(prompt("Enter the breadth of the rectangle"))
+                super.rectangle(length,breadth);
+            }
+            triangle(){
+                let base =+ parseInt(prompt("Enter the base length of the triagnle"))
+                let height =+ parseInt(prompt("Enter the height of the triangle"))
+                super.triangle(base,height)
+            }
+        }
+        
+    </script>
+</body>
+</html>

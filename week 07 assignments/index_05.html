@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 05</title>
+</head>
+<body>
+    <div>
+         <button onclick="fn()">Start</button>
+         <h4 id="res"></h4>
+         <h4 id="res1"></h4>
+         <h4 id="type"></h4>
+    </div>
+    <script>
+        function fn(){
+            let my_string = "Rahul"
+            try{
+                my_string = my_string.split("").reverse().join("");
+                document.getElementById("res").innerHTML = "Reverseword is :";
+                document.getElementById("res1").innerHTML = my_string;
+            }catch(err){
+                document.getElementById("res").innerHTML = (err.message);
+            }finally{
+                document.getElementById("type").innerHTML = "Type of word is :"+typeof(my_string);
+            }
+        }
+    </script>
+</body>
+</html>

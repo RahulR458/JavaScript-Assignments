@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 18</title>
+</head>
+<body>
+    <div>
+        <label>Written test mark</label><br>
+        <input type="number" id="written" placeholder="Enter your mark"><br>
+        <label>Lab exams mark</label><br>
+        <input type="number" id="lab" placeholder="Enter your mark"><br>
+        <label>Assignments mark</label><br>
+        <input type="number" id="asssignments" placeholder="Enter your mark"><br><br>
+        <button onclick="fn()">Submit</button>
+    </div>
+    <script>
+        function fn(){
+            let w = parseFloat(document.getElementById("written").value)
+            let l = parseFloat(document.getElementById("lab").value)
+            let a = parseFloat(document.getElementById("asssignments").value)
+            let total = (w*70)/100 + (l*20)/100 + (a*10)/100
+            let n = total.toFixed(2)
+            document.write("Grade of the student is"+" "+n)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 21</title>
+</head>
+<body>
+    <div>
+        <label>Enter the size of an array</label><br>
+        <input type="number" id="num" placeholder="Enter the limit"><br><br>
+        <button onclick="fn()">Enter</button>
+    </div>
+    <script>
+        function fn(){
+            let a = []
+            let m = []
+            let size = parseInt(document.getElementById("num").value)
+            for(let i=0; i<size; i++){
+                a[i] = prompt("Enter the values of an array")
+            }
+            document.write("Values of array")
+            document.write("<br>")
+            for(let i=0; i<size; i++){
+                document.write(a[i])
+            }
+            document.write("<br>")
+            document.write("After multiply the adjacent values")
+            document.write("<br>")
+            for(i=0; i<size-1; i++){
+                    m[i] = a[i]*a[i+1]
+                
+            }
+            document.write(m)
+        }
+    </script>
+</body>
+</html>

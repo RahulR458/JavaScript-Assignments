@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 09.5</title>
+</head>
+<body>
+    <input type="text" id="strg" placeholder="Enter a string">
+    <button onclick="fn()">Submit</button>
+    <script>
+        function fn(){
+            let string = document.getElementById("strg").value;
+            document.write("Source String "+string)
+            document.write("<br>")  
+            document.write("Copied String "+copyString(string)) 
+            function copyString(string){
+                let destination = " ";
+                for(let i=0; i<string.length; i++){
+                    destination += string[i];
+                }
+                return destination
+            }
+        }
+    </script>
+</body>
+</html>

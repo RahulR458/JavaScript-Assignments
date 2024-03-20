@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 12</title>
+</head>
+<body>
+    <div>
+        <label>Enter the size of an array</label>
+        <input type="number" id="num" placeholder="Enter the size">
+        <button onclick="fn()">Enter</button>
+    </div>
+    <script>
+        function fn(){
+            let size = parseInt(document.getElementById("num").value)
+            let arr = []
+            for(let i=1; i<=size; i++){
+                arr[i] = prompt("Enter the values of array")
+            }
+
+            document.write("Entred array is"+"<br>")
+
+            for(i=1; i<=size; i++){
+                document.write(arr[i]+" ")
+            }
+
+            document.write("<br>")
+            document.write("Sorted array:")
+            document.write("<br>")
+            arr.sort(function(a,b){
+                return b - a;
+            });
+            document.write(arr)
+        }
+
+    </script>
+</body>
+</html>

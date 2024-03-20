@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 09.3</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="str1" placeholder="Enter a word">
+        <input type="text" id="str2" placeholder="Enter a word">
+        <button onclick="fn()">Submit</button>     
+    </div>
+    <script>
+        function fn(){
+            let str1 = document.getElementById("str1").value
+            let str2 = document.getElementById("str2").value
+            if(compareString(str1,str2)){
+                document.write("The stings are not equal")
+            }else{
+                document.write("The stings are equal")
+            }
+            function compareString(str1,str2){
+                if(str1.length !== str2.length){
+                    return true
+                }else{
+                    for(let i=0; i<str1.length; i++){
+                        if(str1[i] !== str2[i]){
+                           return true 
+                        }
+                    }
+                }    return false
+            }
+        }
+    </script>
+</body>
+</html>

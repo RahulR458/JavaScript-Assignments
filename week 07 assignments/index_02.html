@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 2</title>
+</head>
+<body>
+    <div>
+        <div>Enter the size of an array</div>
+        <input type="number" id="num" placeholder="Enter the limit of an array">
+        <button onclick="fn()">Submit</button>
+    </div>
+    <script>
+        function fn(){
+            let limit =+ document.getElementById("num").value;
+            let arr = [[]];
+            for (let i = 0; i < limit; i++) {
+                arr.push([]);
+            }
+            getArray(arr,limit)
+            displayArray(arr,limit)
+        }
+
+        function getArray(arr,limit){
+            for(let i=0; i<limit; i++){
+                for(let j=0; j<limit; j++){
+                    arr[i][j] =+ prompt("Enter the numbers of an array")
+                }
+            }
+        }
+
+        function displayArray(arr,limit){
+            for(let i=0; i<limit; i++){
+                for(let j=0; j<limit; j++){
+                    document.write(arr[i][j]+ " ")
+                }
+                document.write("<br>")
+            }
+        }
+
+    </script>
+</body>
+</html>
+
+
+

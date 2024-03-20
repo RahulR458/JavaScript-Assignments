@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 09.21</title>
+</head>
+<body>
+    <script>
+       
+        class Calculator {
+            add(x, y) {
+                throw new Error("Method not implemented");
+            }
+
+            subtract(x, y) {
+                throw new Error("Method not implemented");
+            }
+
+            multiply(x, y) {
+                throw new Error("Method not implemented");
+            }
+
+            divide(x, y) {
+                throw new Error("Method not implemented");
+            }
+        }
+
+
+        class BasicCalculator extends Calculator {
+            add(x, y) {
+                return x + y;
+            }
+
+            subtract(x, y) {
+                return x - y;
+            }
+
+            multiply(x, y) {
+                return x * y;
+            }
+
+            divide(x, y) {
+                if (y === 0) {
+                    throw new Error("Cannot divide by zero");
+                }
+                return x / y;
+            }
+        }
+
+
+        const calc = new BasicCalculator();
+        console.log(calc.add(5, 3));        
+        console.log(calc.subtract(5, 3));   
+        console.log(calc.multiply(5, 3));   
+        console.log(calc.divide(6, 2));     
+        console.log(calc.divide(6, 0));     
+
+    </script>
+</body>
+</html>

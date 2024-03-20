@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 09.4</title>
+</head>
+<body>
+    <div>
+        <h1>String Operations Menu</h1>
+        <button onclick="getStringLength()">1. String Length</button>
+        <button onclick="concatenateStrings()">2. String Concatenation</button>
+        <button onclick="reverseString()">3. String Reverse</button>
+        <button onclick="exitProgram()">4. Exit</button>
+    </div>
+    <script>
+        function getStringLength() {
+            var str = prompt("Enter a string:");
+            var length = 0;
+            for (var i = 0; str[i] !== undefined; i++) {
+                length++;
+            }
+            alert("Length of the string: " + length);
+        }
+
+        function concatenateStrings() {
+            var str1 = prompt("Enter the first string:");
+            var str2 = prompt("Enter the second string:");
+            var result = str1;
+            for (var i = 0; str2[i] !== undefined; i++) {
+                result += str2[i];
+            }
+            alert("Concatenated string: " + result);
+        }
+
+        function reverseString() {
+            var str = prompt("Enter a string:");
+            var reversed = "";
+            for (var i = str.length - 1; i >= 0; i--) {
+                reversed += str[i];
+            }
+            alert("Reversed string: " + reversed);
+        }
+
+        function exitProgram() {
+            alert("Exiting the program.");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 13</title>
+</head>
+<body>
+    <div>
+        <label>Enter a String</label>
+        <input type="test" id="tes" placeholder="Enter a string">
+        <button onclick="fn()">Enter</button>
+    </div>
+    <script>
+        function fn(){
+            let string = document.getElementById("tes").value
+            let str = string.length
+            let msg = "Entered string is a palindrome"
+            for(let i=0; i<=str/2; i++){
+                if(string[i] !== string[str-1-i]){
+                    msg = "Entered string is not a palindrome"
+                }
+            }
+            document.write(msg)
+        }
+    </script>
+</body>
+</html>

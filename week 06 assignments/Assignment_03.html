@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 03</title>
+</head>
+<body>
+    <div>
+        <label>Principal amount</label><br>
+        <input type="number" id="amount" placeholder="Enter the Principal amount"><br>
+        <label>Interest rate</label><br>
+        <input type="number" id="Interest" placeholder="Enter the Interest rate"><br>
+        <label>Number of years</label><br>
+        <input type="number" id="year" placeholder="Enter the Number of years"><br>
+        <button onclick="fn()">click me</button>
+    </div>
+    <script>
+        function fn(){
+            let P = parseInt(document.getElementById("amount").value)
+            let R = parseFloat(document.getElementById("Interest").value)
+            let n = parseFloat(document.getElementById("year").value)
+            let SI=(P*R*n)/100
+            document.write(SI)
+        }
+    </script>
+</body>
+</html>

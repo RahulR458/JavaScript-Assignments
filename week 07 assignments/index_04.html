@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 04</title>
+</head>
+<body>
+    <div>
+         <h2><bold>Library</bold></h2>
+         <hr>
+         <h4>'Bill Gates',</h4>
+         <h4>'Steve Jobs',</h4>
+         <h4>'Mockingjay: The Final Book of The Hunger Games',</h4>
+         <input type="number" id="num" placeholder="Enter the book number">
+         <button onclick="main()">Submit</button>
+         <h2 id="res"></h2>
+    </div>
+    <script>
+            var library = [ 
+                {
+                    title: 'Bill Gates',
+                    author: 'The Road Ahead',
+                    readingStatus: true
+                },
+                {
+                    title: 'Steve Jobs',
+                    author: 'Walter Isaacson',
+                    readingStatus: true
+                },
+                {
+                    title: 'Mockingjay: The Final Book of The Hunger Games',
+                    author: 'Suzanne Collins',
+                    readingStatus: false
+                }
+            ];
+            function main(){
+                let choice = document.getElementById("num").value
+                if(choice > 0 && choice < 4){
+                    if(library[choice-1].readingStatus==true){
+                        let res = "Already read \""+""+library[choice-1].title+"\"by\""+library[choice-1].author+"\""
+                        document.getElementById("res").innerHTML = res
+                    }else{
+                        let res = "You still need to read \""+""+library[choice-1].title+"\"by\""+library[choice-1].author+"\""
+                        document.getElementById("res").innerHTML = res
+                    }
+                }else{
+                    let res = "Invalid Entry"
+                    document.getElementById("res").innerHTML = res
+                }
+            }
+            
+        
+
+    </script>
+</body>
+</html>

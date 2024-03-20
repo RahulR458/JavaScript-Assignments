@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 09.19</title>
+</head>
+<body>
+    <script>
+        function calculateParcelCharge(weight) {
+            const baseCharge = 200;
+
+            if (weight <= 500) {
+                return baseCharge;
+            } else {
+                const extraWeight = weight - 500;
+                const extraCharge = Math.floor(extraWeight / 500) * 170;
+                    return baseCharge + extraCharge;
+            }
+        }
+        const parcelWeight = parseFloat(prompt("Enter the weight of the parcel in grams:"));
+        const charge = calculateParcelCharge(parcelWeight);
+        document.write("The charge for the parcel is Rs.", charge);
+
+    </script>
+</body>
+</html>

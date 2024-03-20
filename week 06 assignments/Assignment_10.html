@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 10</title>
+</head>
+<body>
+    <div>
+        <label>Enter the size of arrays</label>
+        <input type="number" id="num" placeholder="enter">
+        <button onclick="fn()">clicke here</button>   
+    </div>
+    <script>
+        function fn(){
+            let arr1 = []
+            let arr2 = []
+            let size = parseInt(document.getElementById("num").value)
+            for(let i=1; i<=size; i++){
+                arr1[i] =  prompt("Enter 1st array")
+            }
+            for(let i=1; i<=size; i++){
+                arr2[i] =  prompt("Enter 2nd array")
+            }
+            document.write("Array 1")
+            document.write("<br>")
+            for(let i=1; i<=size; i++){
+                document.write(arr1[i]+" ")
+            }
+            document.write("<br>")
+            document.write("Array 2")
+            document.write("<br>")
+            for(let i=1; i<=size; i++){
+                document.write(arr2[i]+" ")
+            }
+
+            document.write("<br>")
+            document.write("Array after swapping")
+
+            for(let i=1; i<=size; i++){
+                temp = arr1[i]
+                arr1[i] = arr2[i]
+                arr2[i] = temp
+            }
+            
+            document.write("<br>")
+            document.write("Array 1")
+            document.write("<br>")
+            for( i=1; i<=size; i++){
+                document.write(arr1[i]+" ")
+            }
+            
+            document.write("<br>")
+            document.write("Array 2")
+            document.write("<br>")
+            for( i=1; i<=size; i++){
+                document.write(arr2[i]+" ")
+            }
+        }
+    </script>
+</body>
+</html>

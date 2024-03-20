@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 1 </title>
+</head>
+<body>
+    <div>
+        <div>Enter two number :</div>
+        <input type="number" id="num1" placeholder="Enter your first number">
+        <input type="number" id="num2" placeholder="Enter your second number">
+        <div>Select your choice</div>
+        <div>1. Addition</div>
+        <div>2. Subtraction</div>
+        <div>3. Multiplication</div>
+        <div>4. Division</div>
+        <input type="number" id="choice" placeholder="Select your choice">
+        <button onclick="fn()">Submit</button>
+        <div>Result is : <div id="res"></div> </div>
+    </div>
+    <script>
+        function fn(){
+            let num1 =+ document.getElementById("num1").value;
+            let num2 =+ document.getElementById("num2").value;
+            let choice =+ document.getElementById("choice").value;
+
+            let result = 0
+            if(choice == 1){
+                addition(num1,num2) 
+            }else if(choice == 2){
+                subtraction(num1,num2)
+            }else if(choice == 3){
+                multiplication(num1,num2)
+            }else if(choice == 4){
+                division(num1,num2)
+            }else{
+                document.getElementById("res").innerHTML = "Invalid Entry"
+            }
+
+            function addition(num1,num2){
+                result = num1 + num2;
+                document.getElementById("res").innerHTML = result;
+            }
+
+            function subtraction(num1,num2){
+                result = num1 - num2;
+                document.getElementById("res").innerHTML = result;
+            }
+
+            function multiplication(num1,num2){
+                result = num1 * num2;
+                document.getElementById("res").innerHTML = result;
+            }
+
+            function division(num1,num2){
+                result = num1 / num2
+                document.getElementById("res").innerHTML = result;
+            }
+        }
+    </script>
+</body>
+</html>

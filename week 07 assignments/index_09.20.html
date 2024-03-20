@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Matrix Operations</title>
+  <script>
+    
+    function matrixAddition(matrix1, matrix2) {
+      if (matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length) {
+        return null;
+      }
+
+      const result = [];
+      for (let i = 0; i < matrix1.length; i++) {
+        result.push([]);
+        for (let j = 0; j < matrix1[0].length; j++) {
+          result[i].push(matrix1[i][j] + matrix2[i][j]);
+        }
+      }
+      return result;
+    }
+
+    
+    function matrixMultiplication(matrix1, matrix2) {
+      if (matrix1[0].length !== matrix2.length) {
+        return null; 
+      }
+
+      const result = [];
+      for (let i = 0; i < matrix1.length; i++) {
+        result.push([]);
+        for (let j = 0; j < matrix2[0].length; j++) {
+          let sum = 0;
+          for (let k = 0; k < matrix1[0].length; k++) {
+            sum += matrix1[i][k] * matrix2[k][j];
+          }
+          result[i].push(sum);
+        }
+      }
+      return result;
+    }
+
+    
+    function matrixSubtraction(matrix1, matrix2) {
+      if (matrix1.length !== matrix2.length || matrix1[0].length !== matrix2[0].length) {
+        return null; 
+      }
+
+      const result = [];
+      for (let i = 0; i < matrix1.length; i++) {
+        result.push([]);
+        for (let j = 0; j < matrix1[0].length; j++) {
+          result[i].push(matrix1[i][j] - matrix2[i][j]);
+        }
+      }
+      return result;
+    }
+
+    
+    function matrixTranspose(matrix) {
+      const result = [];
+      for (let i = 0; i < matrix[0].length; i++) {
+        result.push([]);
+        for (let j = 0; j < matrix.length; j++) {
+          result[i].push(matrix[j][i]);
+        }
+      }
+      return result;
+    }
+
+    
+    function displayMatrix(matrix, elementId) {
+      const element = document.getElementById(elementId);
+      element.innerHTML = '';
+      for (let i = 0; i < matrix.length; i++) {
+        const row = document.createElement('div');
+        row.textContent = matrix[i].join('\t');
+        element.appendChild(row);
+      }
+    }
+
+    
+    function mainMenu() {
+      const choice = parseInt(prompt('Matrix Operations:\n1. Matrix Addition\n2. Matrix Multiplication\n3. Matrix Subtraction\n4. Matrix Transpose\n5. Exit'));
+
+      switch (choice) {
+        case 1:
+          const matrixAdd1 = [[1, 2], [3, 4]];
+          const matrixAdd2 = [[5, 6], [7, 8]];
+          const additionResult = matrixAddition(matrixAdd1, matrixAdd2);
+          if (additionResult) {
+            displayMatrix(additionResult, 'result');
+          } else {
+            alert('Invalid matrices for addition');
+          }
+          break;
+        case 2:
+          const matrixMul1 = [[1, 2], [3, 4]];
+          const matrixMul2 = [[5, 6], [7, 8]];
+          const multiplicationResult = matrixMultiplication(matrixMul1, matrixMul2);
+          if (multiplicationResult) {
+            displayMatrix(multiplicationResult, 'result');
+          } else {
+            alert('Invalid matrices for multiplication');
+          }
+          break;
+        case 3:
+          const matrixSub1 = [[1, 2], [3, 4]];
+          const matrixSub2 = [[5, 6], [7, 8]];
+          const subtractionResult = matrixSubtraction(matrixSub1, matrixSub2);
+          if (subtractionResult) {
+            displayMatrix(subtractionResult, 'result');
+          } else {
+            alert('Invalid matrices for subtraction');
+          }
+          break;
+        case 4:
+          const matrixTrans = [[1, 2], [3, 4], [5, 6]];
+          const transposeResult = matrixTranspose(matrixTrans);
+          displayMatrix(transposeResult, 'result');
+          break;
+        case 5:
+          return;
+        default:
+          alert('Invalid choice');
+          break;
+      }
+
+      mainMenu();
+    }
+  </script>
+</head>
+<body onload="mainMenu()">
+  <h1>Matrix Operations</h1>
+  <div id="result"></div>
+</body>
+</html>

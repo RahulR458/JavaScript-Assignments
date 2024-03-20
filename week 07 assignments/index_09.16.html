@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 09.16</title>
+</head>
+<body>
+    <script>
+        let numberOfStudents = parseInt(prompt("ENter the no. students"))
+        function calculateHandshakes(n) {
+            if (n <= 0) {
+                return "Number of students must be a positive integer.";
+            }
+
+            let handshakes = (n * (n - 1)) / 2;
+
+            return handshakes;
+        }
+        let totalHandshakes = calculateHandshakes(numberOfStudents);
+        document.write("Total number of handshakes:", totalHandshakes);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 09.17</title>
+</head>
+<body>
+    <script>
+        function swapNumbers(num1, num2) {
+  
+            let temp;
+
+            let pointer1 = { value: num1 };
+            let pointer2 = { value: num2 };
+
+
+            temp = pointer1.value;
+            pointer1.value = pointer2.value;
+            pointer2.value = temp;
+
+  
+            document.write("After swapping:"+"<br>");
+            document.write("Number 1:", pointer1.value+"<br>");
+            document.write("Number 2:", pointer2.value+"<br>");
+        }
+
+
+        let number1 = parseInt(prompt("Enter the first number:"));
+        let number2 = parseInt(prompt("Enter the second number:"));
+
+        document.write("Number 1:", number1+"<br>");
+        document.write("Number 2:", number2+"<br>");
+
+        swapNumbers(number1, number2);
+
+    </script>
+</body>
+</html>

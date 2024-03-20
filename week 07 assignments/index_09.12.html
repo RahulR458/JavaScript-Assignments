@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 09.12</title>
+</head>
+<body>
+    <div>
+        <label for="textLine">Enter a line of text: </label>
+    <input type="text" id="textLine" />
+    <button onclick="countCharacters()">Count</button>
+    <br />
+    <p id="alphabetCount"></p>
+    <p id="digitCount"></p>
+    <p id="specialCharCount"></p>
+
+    </div>
+    <script>
+        function countCharacters() {
+            let line = document.getElementById('textLine').value;
+            let alphabetCount = 0;
+            let digitCount = 0;
+            let specialCharCount = 0;
+
+            for (var i = 0; i < line.length; i++) {
+                let char = line.charAt(i);
+
+                if (/[a-zA-Z]/.test(char)) {
+                    alphabetCount++;
+                } else if (/[0-9]/.test(char)) {
+                    digitCount++;
+                } else {
+                    specialCharCount++;
+                }
+            }
+
+            document.getElementById('alphabetCount').textContent = 'Number of Alphabets: ' + alphabetCount;
+            document.getElementById('digitCount').textContent = 'Number of Digits: ' + digitCount;
+            document.getElementById('specialCharCount').textContent = 'Number of Special Characters: ' + specialCharCount;
+        }
+
+    </script>
+</body>
+</html>
+     

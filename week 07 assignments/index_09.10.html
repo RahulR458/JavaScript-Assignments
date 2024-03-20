@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 09.10</title>
+</head>
+<body>
+    <script>
+        function printPattern(rows) {
+            var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            var maxCharIndex = rows - 1;
+            for (var i = 0; i < rows; i++) {
+                var pattern = '';
+                for (var j = 0; j < rows - i - 1; j++) {
+                    pattern += '  ';
+                }
+                for (var k = 0; k <= i; k++) {
+                    pattern += alphabet.charAt(k) + ' ';
+                }
+                for (var l = i - 1; l >= 0; l--) {
+                    pattern += alphabet.charAt(l) + ' ';
+                }
+                for (var m = 0; m < rows - i - 1; m++) {
+                    pattern += '  ';
+                }
+                console.log(pattern);
+            }
+        }
+        var numberOfRows = 4;
+        printPattern(numberOfRows);
+
+    </script>
+</body>
+</html>

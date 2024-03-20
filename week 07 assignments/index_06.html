@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 06</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="height" placeholder="Enter the height">
+        <button onclick="fn()">Submit</button>
+        <h4 id="res"></h4>
+    </div>
+    <script>
+        function fn(){
+            let userHeight = document.getElementById("height").value;
+            try{
+                if(isNaN(userHeight)){
+                    throw new SyntaxError("notANumberError");
+                }else if(userHeight>200){
+                    throw new SyntaxError("hugeHeightError");
+                }else if(userHeight<40){
+                    throw new SyntaxError("tinyHeightError");
+                }else{
+                    document.getElementById("res").innerHTML = "Valid Entry"
+                }
+            }catch(err){
+                document.getElementById("res").innerHTML = (err.message);
+            }
+        }
+    </script>
+</body>
+</html>

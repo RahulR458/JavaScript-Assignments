@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 04</title>
+</head>
+<body>
+    <div>
+        <label>Enter your mark</label><br>
+        <input type="number" id="mark" placeholder="mark"><br>
+        <button onclick="fn()">click here</button>
+    </div>
+    <script>
+        function fn(){
+            // let Mark = parseFloat(document.getElementById("mark").value)
+            // if(Mark<50){
+            //     document.write("Failed")
+            // }else if(Mark<=100){
+            //     document.write("Passed")
+            // }else{
+            //     document.write("Invalid")
+            // }
+
+            let Mark = parseFloat(document.getElementById("mark").value)
+            let check = Mark<50 ? "Failed" : Mark<=100 ? "Passed" : "Invalid"
+            document.write(check)
+
+        }
+    </script>
+</body>
+</html>
